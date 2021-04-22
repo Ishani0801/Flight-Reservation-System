@@ -23,6 +23,10 @@ public class Passenger {
         this.id = passenger.id;
     }
 
+    public Passenger() {
+
+    }
+
     //Address and contact class nested inside Passenger class showing composition.
     private static class Address {
 

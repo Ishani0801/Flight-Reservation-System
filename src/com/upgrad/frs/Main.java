@@ -3,13 +3,12 @@ package com.upgrad.frs;
 public class Main {
 
     public static void main(String[] args) {
-
-        Flight flight = new Flight("X4532 B4", "Indigo", 100, 10);
-        System.out.println(flight.getFlightNumber());
-        System.out.println(flight.checkAvailability());
-        System.out.println(flight.getFightDetails());
-        flight.incrementBookingCounter();
-        System.out.println(flight.getFightDetails());
-
+            Passenger passenger = new Passenger();
+            Flight flight = new Flight();
+            RegularTicket regularTicket = new RegularTicket("123456", "Bhopal", "Delhi",
+                    "19/05/2021", "19/05/2021", "12.00", "6.00",
+                    "12A", 7500, false, passenger, flight, "Food, Snacks and Water");
+        System.out.println(regularTicket.checkStatus());
+        System.out.println(regularTicket.getArrivalDate());
     }
 }

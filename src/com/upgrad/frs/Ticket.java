@@ -1,21 +1,21 @@
 package com.upgrad.frs;
 
-public class Ticket {
+public abstract class Ticket {
     private String pnr;
     private String from;
     private String to;
     private String departureDate;
     private String arrivalDate;
-    private int departureTime;
-    private int arrivalTime;
+    private String departureTime;
+    private String arrivalTime;
     private String seatNumber;
     private float price;
     private boolean cancelled;
-    Passenger passenger;
-    Flight flight;
+    private Passenger passenger;
+    private Flight flight;
 
     public Ticket(String pnr, String from, String to, String departureDate,
-                  String arrivalDate, int departureTime, int arrivalTime,
+                  String arrivalDate, String departureTime, String arrivalTime,
                   String seatNumber, float price, boolean cancelled, Passenger passenger, Flight flight) {
         this.pnr = pnr;
         this.from = from;
@@ -40,10 +40,12 @@ public class Ticket {
 
     //gives the duration of flight in 2400 Hrs. Format
     public int getFlightDuration() {
-        if (arrivalTime > departureTime) {
-            return arrivalTime - departureTime;
+        int arrival = Integer.parseInt(arrivalTime);
+        int departure = Integer.parseInt(departureTime);
+        if (arrival > departure) {
+            return arrival - departure;
         }
-        return departureTime - arrivalTime;
+        return departure - arrival;
     }
 
     public void cancel() {
@@ -90,19 +92,19 @@ public class Ticket {
         this.arrivalDate = arrivalDate;
     }
 
-    public int getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(int departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public int getArrivalTime() {
+    public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(int arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
