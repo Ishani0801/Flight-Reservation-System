@@ -70,7 +70,7 @@ public class Flight {
         bookedSeats++;
     }
 
-    Flight (){
+    Flight() {
 
     }
 }

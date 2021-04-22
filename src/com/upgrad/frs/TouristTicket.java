@@ -14,7 +14,7 @@ public class TouristTicket extends Ticket {
                          String hotelAddress, String[] selectedTouristLocation) {
         super(pnr, from, to, departureDate,
                 arrivalDate, departureTime, arrivalTime,
-        seatNumber, price, cancelled, passenger, flight);
+                seatNumber, price, cancelled, passenger, flight);
         this.hotelAddress = hotelAddress;
         this.selectedTouristLocation = selectedTouristLocation;
 
